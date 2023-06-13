@@ -1,0 +1,270 @@
+@font-face {
+    font-family: 'Geologica', sans-serif;
+    src: url('../fonts/Geologica-Black.ttf');
+}
+
+@font-face {
+  font-family: 'Comfortaa', sans-serif;
+  src: url('../fonts/Comfortaa-Bold.ttf');
+}
+
+html{
+  size: 100%;
+}
+
+body {
+    background-size: 100%;
+    font-family: Roboto;
+    background-color: rgb(55, 149, 243);
+    font-family: monospace;
+}
+
+.background{
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+
+li a {
+  font-weight: 500;
+  font-size: 16px;
+  color: rgb(14, 18, 248);
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  
+}
+
+header{
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  word-spacing: 1em;
+  align-items: center;
+  z-index: 100;
+  opacity: 0.85;
+  margin-top: -193px;
+  background-attachment: scroll;
+}
+
+/* Social links */
+.navbar {
+  list-style: none ;
+  opacity: 0.9;
+  size: 1000px;
+  width: 100%;
+  position: fixed;
+  background-color:rgba(245, 245, 245, 0.486);
+  padding: 5vh;
+  margin-top: -7px;
+  margin-left: -7px;
+}
+
+.home{
+  margin-right: 940px;
+}
+
+.instagram{
+  color: #f611ae;
+}
+
+.telegram{
+  color: rgb(0,136,204);
+}
+
+.vk{
+  color: #1d4e8a
+}
+
+.github{
+  color: black;
+}
+
+.youtube{
+  color: #bb0000;
+}
+
+.navbar li {
+  display: inline-block;
+  padding: 0, 10px;
+}
+
+.navbar li a {
+  transition: all 0.3s ease 0s;
+}
+
+.navbar li a:hover{
+  color: aliceblue;
+}
+/* Social links */
+
+/* Main text */
+.my_bio {
+  background-color:rgba(255,255,255,.8);
+  opacity: 0.8;
+  font-size: 18px;
+  border-radius:.27em;
+  box-shadow:0 0 .27em rgba(0,0,0,.25);
+  padding: 10px;
+  position: relative;
+  /* align-items: center; */
+  margin-top: 200px;
+  margin-left: 300px;
+  text-align:left;
+  box-sizing: border-box;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 1000px;
+  max-height: 800px;
+}
+
+.my_bio p{
+  margin: 0 auto;
+  font-size: 180%;
+  text-align: center;
+  overflow: hidden;
+  transform: translateY(-50%);
+}
+
+.head {
+  overflow: hidden;
+}
+
+h3{
+  font-weight: normal;
+  overflow: hidden;
+}
+
+.languages{
+  overflow: hidden;
+}
+
+.anim-typewriter{
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+  blinkTextCursor 500ms steps(44) infinite normal;
+}
+
+@keyframes typewriter{
+  from { width: 0% }
+  to { width: 100% }
+}
+
+@keyframes blinkTextCursor{
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
+
+
+.innopolis{
+  text-decoration: none;
+  color: #009f25;
+}
+/* Main text */
+
+
+/* Background */
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, rgb(24, 249, 192) 50%, rgb(53, 187, 249) 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+@keyframes slider {
+  0% {
+    opacity: 0%;
+    transform: translateY(400px);
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+/* Background */
+
+
+/* Button */
+/* .but{
+    margin-left: 700px;
+    margin-top: 90px;
+}
+
+.button {
+    position: relative;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    outline: none;
+    display: inline-block;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 12px 16px;
+    border-radius: 200px;
+    color: #fff;
+    background: transparent;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    margin-top: 200px;
+  }
+  
+  .button:active {
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+  
+.button::before,
+  .button::after {
+    content: "";
+    position: absolute;
+    transition: all 0.3s;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .button::before {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+
+  #button-1::before,
+  #button-1:active::before {
+    opacity: 0;
+    transform: scale(1, 0.1);
+  }
+  
+  #button-1:hover::before {
+    opacity: 1;
+    transform: scale(1, 1);
+  }  */
+
+/* Button */
+
+
