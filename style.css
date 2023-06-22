@@ -1,23 +1,16 @@
-@font-face {
-    font-family: 'Geologica', sans-serif;
-    src: url('../fonts/Geologica-Black.ttf');
-}
-
-@font-face {
-  font-family: 'Comfortaa', sans-serif;
-  src: url('../fonts/Comfortaa-Bold.ttf');
-}
-
 html{
   size: 100%;
 }
 
 body {
     background-size: 100%;
-    font-family: Roboto;
+    font-family: monospace;
     background-color: rgb(55, 149, 243);
     font-family: monospace;
+    margin: 0;
+    display: block;
 }
+
 
 .background{
     height: auto;
@@ -32,44 +25,39 @@ li a {
   font-size: 16px;
   color: rgb(14, 18, 248);
   text-decoration: none;
-  font-family: 'Roboto', sans-serif;
+  font-family: monospace;
   
 }
 
 header{
-  position: fixed;
-  display: flex;
   justify-content: flex-end;
   word-spacing: 1em;
   align-items: center;
   z-index: 100;
-  opacity: 0.85;
-  margin-top: -193px;
-  background-attachment: scroll;
+  margin: 0;
+  padding: 0;
 }
 
 /* Social links */
 .navbar {
-  list-style: none ;
-  opacity: 0.9;
-  size: 1000px;
-  width: 100%;
   position: fixed;
+  width: 100%;
   background-color:rgba(245, 245, 245, 0.486);
-  padding: 5vh;
-  margin-top: -7px;
-  margin-left: -7px;
+  padding: 4vh;
+  margin: 0;
+  z-index: 102;
 }
 
 .home{
-  margin-right: 940px;
+  margin-right: 1040px;
+  color:rgb(16, 69, 202);
 }
 
 .instagram{
   color: #f611ae;
 }
 
-.telegram{
+.tg{
   color: rgb(0,136,204);
 }
 
@@ -99,18 +87,23 @@ header{
 }
 /* Social links */
 
+.block{
+  width: 1200px;
+  height: 1000px;
+}
+
 /* Main text */
-.my_bio {
+.my_bio { 
   background-color:rgba(255,255,255,.8);
   opacity: 0.8;
   font-size: 18px;
   border-radius:.27em;
   box-shadow:0 0 .27em rgba(0,0,0,.25);
-  padding: 10px;
-  position: relative;
-  /* align-items: center; */
-  margin-top: 200px;
-  margin-left: 300px;
+  padding: 20px;
+  margin: 0;
+  position: absolute;
+  top: 200px;
+  left: 300px;
   text-align:left;
   box-sizing: border-box;
   overflow: hidden;
@@ -163,6 +156,40 @@ h3{
 /* Main text */
 
 
+
+.comic{
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  height: auto;
+  bottom: 0;
+  top: 1000px;
+  margin-left: 8px;
+}
+
+.comic h1 {
+  font-size: 40px;
+} 
+
+.text_comics {
+  width: 600px;
+  height: 400px;
+  font-size: 15px;
+  margin-left: 10px;
+  padding: 5px 15px;
+  position: absolute;
+  justify-content: right;
+  left: 860px;
+  text-align:justify;
+  border-radius:.27em;
+  box-shadow:0 0 .27em rgba(0,0,0,.25);
+  background-color:rgba(255, 255, 255, 0.8);
+
+}
+
+
+
+
 /* Background */
 .bg {
   animation:slide 3s ease-in-out infinite alternate;
@@ -209,11 +236,6 @@ h3{
 
 
 /* Button */
-/* .but{
-    margin-left: 700px;
-    margin-top: 90px;
-}
-
 .button {
     position: relative;
     border: 2px solid rgba(255, 255, 255, 0.5);
@@ -225,12 +247,11 @@ h3{
     text-transform: uppercase;
     cursor: pointer;
     font-size: 16px;
-    padding: 12px 16px;
+    padding: 12px 9px;
     border-radius: 200px;
     color: #fff;
     background: transparent;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    margin-top: 200px;
   }
   
   .button:active {
@@ -263,7 +284,7 @@ h3{
   #button-1:hover::before {
     opacity: 1;
     transform: scale(1, 1);
-  }  */
+  }
 
 /* Button */
 
