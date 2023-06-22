@@ -1,37 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>My bio</title>
+    
 </head>
-<body>
-    <link rel="stylesheet" href="style.css">
-    <div class="intro">
+<body onload="displayComic()">
+    <link rel="stylesheet" href="style.css" id="style">
         <header>
             <nav>
                 <ul class="navbar">
-                    <li><a class="home" href="index.html"><i class="fa-solid fa-house fa-2xl"></i></a></li>
+                    <li><a class="home" href="https://draxster.github.io/"><i class="fa-solid fa-house fa-2xl"></i></a></li>
                     <li><a class = "instagram" href="https://instagram.com/anti_freezz?igshid=OGQ5ZDc2ODk2ZA=="><i class="fa-brands fa-instagram fa-2xl"></i></a></li>
                     <li><a class = "tg" href="https://t.me/Draxster1"><i class="fa-brands fa-telegram fa-2xl"></i></a></li>
-                    <li><a class = "social social-vk" href="https://vk.com/draxsterr"><i class ="fa-brands fa-vk fa-2xl"></i></a></li>
+                    <li><a class = "vk" href="https://vk.com/draxsterr"><i class ="fa-brands fa-vk fa-2xl"></i></a></li>
                     <li><a class = "github" href="https://github.com/Draxster"><i class="fa-brands fa-github fa-2xl"></i></a></li>
                     <li><a class = "youtube" href="https://www.youtube.com/channel/UCS08GdzXo6_ij_npBi0vzHw"><i class="fa-brands fa-youtube fa-2xl"></i></a></li>
-                    <li><a class="email" href="mailto:f.rakhmatov@innopolis.university"><i class="fa-regular fa-envelope fa-2xl"></i></a></li>
+                    <li><a class = "email" href="mailto:f.rakhmatov@innopolis.university"><i class="fa-regular fa-envelope fa-2xl"></i></a></li>
+                    <button id="button-1" class="button">
+                        <span><i class="fa-solid fa-moon fa-2xl"></i></span>
+                      </button>
                 </ul>
             </nav>
         </header>
 
-        <!-- <div class="but">
-            <button id="button-1" class="button">
-                <i class="Start"></i>
-                <span>Start</span>
-              </button>
-              <ul></ul>
-        </div> -->
-        
-        
-                
-        </div>
-        <div class="bio">
+            
+        <div class="block bio">
             <div class = "my_bio" id="text">
                 <h2 class="head anim-typewriter">About me</h2>
                 <h3 class="info anim-typewriter">Hello, you open the website about <b>Fariz Rakhmatov!</b><br>
@@ -50,15 +42,67 @@
                         <li>CSS<i class="fa-brands fa-css3-alt fa-sm"></i></li>
                         <li>JavaScript<i class="fa-brands fa-square-js fa-sm"></i></li>
                     </ul>
+            </div>
+
+            <div class="block comic" id="comic-container">
+                <h1>Some comics for you!</h1>
+                <div class="text_comics"><h2>Comics are a form of storytelling that uses sequential images and dialogue to convey a narrative.<br>They come in many different styles, from superhero adventures to personal memoirs, and are loved by people of all ages.<br>Comics have the unique ability to tap into our imaginations and take us on a journey through fantastic worlds and thrilling adventures. Whether you're a lifelong fan or just discovering the world of comics for the first time, there's something for everyone in this thrilling medium.</h2>
+                
                 </div>
+            </div>
         </div>
+    
+
         <div class="bg"></div>
         <div class="bg bg2"></div>
         <div class="bg bg3"></div>
         <div class="content">
-    </div>
     <script src="app.js"></script>
     <script src="https://kit.fontawesome.com/1fd736d5c6.js" crossorigin="anonymous"></script>
+    
+    
+  <script>
+    const email = "f.rakhmatov@innopolis.university"
+
+    async function getXkcdId() {
+        const params = new URLSearchParams();
+        if (email) {
+            params.append('email', email);
+        }
+        return fetch('https://fwd.innopolis.university/api/hw2?email=' + params.toString())
+        .then(response => response.json());
+    }
+
+    
+    async function getXkcdComic(id) {
+      const url = 'https://fwd.innopolis.university/api/comic?id=' + id.toString();
+      const response = await fetch(url);
+      const data = await response.json();
+      return data;
+      
+    }
+    
+
+    async function displayComic() {
+      const id = await getXkcdId();
+      const comic = await getXkcdComic(id);
+
+      const container = document.getElementById('comic-container');
+
+      const title = document.createElement('title');
+      title.textContent = comic.safe_title;
+      container.appendChild(title);
+
+      const image = document.createElement('img');
+      image.src = comic.img;
+      image.alt = comic.alt;
+      container.appendChild(image);
+
+      const date = document.createElement('p');
+      date.textContent = new Date(comic.year, comic.month - 1, comic.day).toLocaleDateString();
+      container.appendChild(date);
+    }
+    </script>
 </body>
 </html>
 
