@@ -1,9 +1,11 @@
-// const button = document.getElementById('button-1');
-// const text = document.getElementById('text');
+const btn = document.getElementById("button-1");
 
-// button.addEventListener('click', () => {
-//   button.style.opacity = 0;
+const theme = document.getElementById("style");
 
-//   text.style.display = 'flex'; 
-//   text.style.animation = "slider 1s ease-in-out";
-// });
+btn.addEventListener("click", function() {
+  if (theme.getAttribute("href") == "style.css") {
+    theme.href = "dark-style.css";
+  } else {
+    theme.href = "style.css";
+  }
+});
