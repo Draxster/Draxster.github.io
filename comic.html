@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      h1 {
+        margin-top: 20px;
+      }
+
+      p {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+<body onload="displayComic()">
+  <div id="comic-container"></div>
+  <script>
+    const email = "f.rakhmatov@innopolis.university"
+
+    async function getXkcdId() {
+        const params = new URLSearchParams();
+        if (email) {
+            params.append('email', email);
+        }
+        return fetch('https://fwd.innopolis.university/api/hw2?email=' + params.toString())
+        .then(response => response.json());
+    }
+
+    
+    async function getXkcdComic(id) {
+      const url = 'https://fwd.innopolis.university/api/comic?id=' + id.toString();
+      const response = await fetch(url);
+      const data = await response.json();
+      return data;
+      
+    }
+    
+
+    async function displayComic() {
+      const id = await getXkcdId();
+      const comic = await getXkcdComic(id);
+
+      const container = document.getElementById('comic-container');
+
+      const title = document.createElement('title');
+      title.textContent = comic.safe_title;
+      container.appendChild(title);
+
+      const image = document.createElement('img');
+      image.src = comic.img;
+      image.alt = comic.alt;
+      container.appendChild(image);
+
+      const date = document.createElement('p');
+      date.textContent = new Date(comic.year, comic.month - 1, comic.day).toLocaleDateString();
+      container.appendChild(date);
+    }
+    </script>
+  </body>
+</html>
